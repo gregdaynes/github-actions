@@ -30,4 +30,5 @@ jobs:
           echo "EXTENSION_OD=${{ secrets.EXTENSION_ID }}" >> .env
 
       - name: Run Build
-        run: shopify build
+        run: |
+          shopify build
