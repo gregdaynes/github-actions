@@ -19,6 +19,7 @@ jobs:
           SHOPIFY_CLI_URL="https://github.com/Shopify/shopify-app-cli/releases/download/v1.2.0/shopify-cli-1.2.0.deb"
           DOWNLOAD_PATH="/tmp/shopify-cli-1.2.0.deb"
           curl -L -o $DOWNLOAD_PATH  $SHOPIFY_CLI_URL
+          sudo apt install $DOWNLOAD_PATH
       - name: Run Build
         run: |
           ls /tmp
