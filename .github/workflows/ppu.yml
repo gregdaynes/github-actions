@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # - name: Setup Tooling
-      #   run: |
-      #     SHOPIFY_CLI_URL="https://github.com/Shopify/shopify-app-cli/releases/download/v1.2.0/shopify-cli-1.2.0.deb"
-      #     DOWNLOAD_PATH="/tmp/shopify-cli-1.2.0.deb"
-      #     curl -L -o $DOWNLOAD_PATH  $SHOPIFY_CLI_URL
-      #     sudo apt install $DOWNLOAD_PATH
+      - name: Setup Tooling
+        run: |
+          SHOPIFY_CLI_URL="https://github.com/Shopify/shopify-app-cli/releases/download/v1.2.0/shopify-cli-1.2.0.deb"
+          DOWNLOAD_PATH="/tmp/shopify-cli-1.2.0.deb"
+          curl -L -o $DOWNLOAD_PATH  $SHOPIFY_CLI_URL
+          sudo apt install $DOWNLOAD_PATH
 
       - name: Checkout code
         uses: actions/checkout@v2
