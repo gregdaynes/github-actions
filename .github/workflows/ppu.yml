@@ -23,7 +23,6 @@ jobs:
 
       - name: Setup Environment
         run: |
-          cd post-purchase-extension
           echo "SHOPIFY_API_KEY=${{ secrets.SHOPIFY_API_KEY }}" >> .env
           echo "SHOPIFY_API_SECRET=${{ secrets.SHOPIFY_API_SECRET }}" >> .env
           echo "EXTENSION_TITLE=${{ secrets.EXTENSION_TITLE }}" >> .env
@@ -32,7 +31,4 @@ jobs:
 
       - name: Run Build
         run: |
-          pwd
-          ls
-          which shopify
-          shopify build
+          cd post-purchase-extension && shopify build
