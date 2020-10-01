@@ -28,6 +28,7 @@ jobs:
           echo "SHOPIFY_API_SECRET=${{ secrets.SHOPIFY_API_SECRET }}" >> .env
           echo "EXTENSION_TITLE=${{ secrets.EXTENSION_TITLE }}" >> .env
           echo "EXTENSION_OD=${{ secrets.EXTENSION_ID }}" >> .env
+          echo $(ls ./)
 
       - name: Run Build
         run: |
