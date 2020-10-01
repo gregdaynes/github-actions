@@ -32,5 +32,6 @@ jobs:
       - name: Run Build
         run: |
           pwd
+          ls
           which shopify
           shopify build
