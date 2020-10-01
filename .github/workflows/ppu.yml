@@ -21,14 +21,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # - name: Setup Environment
-      #   run: |
-      #     echo "SHOPIFY_API_KEY=${{ secrets.SHOPIFY_API_KEY }}" >> .env
-      #     echo "SHOPIFY_API_SECRET=${{ secrets.SHOPIFY_API_SECRET }}" >> .env
-      #     echo "EXTENSION_TITLE=${{ secrets.EXTENSION_TITLE }}" >> .env
-      #     echo "EXTENSION_OD=${{ secrets.EXTENSION_ID }}" >> .env
-      #     echo $(ls ./)
-
-      - name: Run Build
+      - name: Setup Environment
         run: |
-          cd post-purchase-extension && echo $(pwd)
+          cd post-purchase-extension
+          echo $(pwd)
+          echo "SHOPIFY_API_KEY=${{ secrets.SHOPIFY_API_KEY }}" >> .env
+          echo "SHOPIFY_API_SECRET=${{ secrets.SHOPIFY_API_SECRET }}" >> .env
+          echo "EXTENSION_TITLE=${{ secrets.EXTENSION_TITLE }}" >> .env
+          echo "EXTENSION_OD=${{ secrets.EXTENSION_ID }}" >> .env
+          echo $(ls ./)
+
+      # - name: Run Build
+      #   run: |
+      #     cd post-purchase-extension && echo $(pwd)
