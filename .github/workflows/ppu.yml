@@ -24,13 +24,12 @@ jobs:
       - name: Setup Environment
         run: |
           cd post-purchase-extension
-          echo $(pwd)
           echo "SHOPIFY_API_KEY=${{ secrets.SHOPIFY_API_KEY }}" >> .env
           echo "SHOPIFY_API_SECRET=${{ secrets.SHOPIFY_API_SECRET }}" >> .env
           echo "EXTENSION_TITLE=${{ secrets.EXTENSION_TITLE }}" >> .env
           echo "EXTENSION_OD=${{ secrets.EXTENSION_ID }}" >> .env
-          echo $(ls ./)
 
-      # - name: Run Build
-      #   run: |
-      #     cd post-purchase-extension && echo $(pwd)
+      - name: Run Build
+        run: |
+          echo $(pwd)
+          cd post-purchase-extension && echo $(pwd)
