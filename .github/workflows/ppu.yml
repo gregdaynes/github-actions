@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Setup Tooling
         run: |
           SHOPIFY_CLI_URL="https://github.com/Shopify/shopify-app-cli/releases/download/v1.2.0/shopify-cli-1.2.0.deb"
@@ -21,6 +18,12 @@ jobs:
           curl -L -o $DOWNLOAD_PATH  $SHOPIFY_CLI_URL
           sudo apt install $DOWNLOAD_PATH
 
-      - name: Run Build
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Environment
         run: |
-          ls ./
+          cd post-purchase-extension
+          echo "SHOPIFY_API_KEY=${{ secrets.SHOPIFY_API_KEY }}" >> .env
+          cat .env
+
