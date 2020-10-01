@@ -31,4 +31,5 @@ jobs:
 
       - name: Run Build
         run: |
+          which shopify
           shopify build
