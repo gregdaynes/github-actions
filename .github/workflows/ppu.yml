@@ -1,0 +1,19 @@
+name: PPU Publish Staging
+
+on:
+  release:
+    types: [created]
+  push:
+
+jobs:
+  build-publish:
+    name: Build & Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Build
+        run: |
+          echo "test"
