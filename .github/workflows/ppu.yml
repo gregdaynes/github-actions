@@ -31,5 +31,5 @@ jobs:
 
       - name: Run Build
         run: |
-          echo $(pwd)
-          cd post-purchase-extension && echo $(pwd)
+          cd post-purchase-extension
+          shopify build
