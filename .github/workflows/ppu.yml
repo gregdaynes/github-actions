@@ -32,4 +32,5 @@ jobs:
       - name: Run Build
         run: |
           cd post-purchase-extension
+
           shopify build
